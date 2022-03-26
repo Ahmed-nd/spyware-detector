@@ -6,14 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <title>Anti-Spyware</title>
 </head>
 
 <body>
     <div id="grid">
         <div class="main">
-            <div id="logoContainer"><a href="http://localhost:5000/"><h1>Anti-Spyware</a></h1></div>
-            
+            <div id="logoContainer"><a href="http://localhost:5000/">
+                    <h1>Anti-Spyware
+                </a></h1>
+            </div>
+
             <div id="filePreview">
                 {% if predict %}
                 <p>The <strong>{{ fileName }}</strong> file is
@@ -30,16 +34,27 @@
                 <h5>Browse, Drop, or Ctrl+V to Paste a File~</h5>
                 {% endif %}
             </div>
-            
-            <form id="fileInputButton" action="http://localhost:5000/spyware" method="post"
-                enctype="multipart/form-data">
-                <div id="fileRowContainer">
-                    <input id="fileInput" onchange="checkFile();" type="file" name="file"
-                    title="Browse to select an file to scan" accept=".exe" />
-                <span id="fileInputLabel">Select File</span>
-                </div>
-            </form>
-            
+            <div id="searchFormContainer">
+                <form id="searchForm" action="http://localhost:5000/spyware" method="post"
+                    enctype="multipart/form-data">
+                    <div id="fileRowContainer">
+                        <div id="fileInputButton">
+                            <input id="fileInput" onchange="checkFile();" type="file" name="file"
+                                title="Browse to select an file to scan" accept=".exe" />
+                            <span id="fileInputLabel">Select File</span>
+                        </div>
+
+                    </div>
+                    <input id="urlInput" name="url" type="text" placeholder="Paste File URL"
+                        title="Supply a URL linking to an file">
+                    <div id="searchRowContainer">
+                        <input type="submit" value="SEARCH" id="searchButton" onchange="getURLInput();"
+                            title="Start scanning the File">
+                    </div>
+                </form>
+            </div>
+
+
         </div>
         <div id="spacer">
         </div>

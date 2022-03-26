@@ -54,26 +54,45 @@ input, select, textarea, button {
     margin-bottom: 0.2em;
     z-index: 2;
 }
-#fileInputButton{
-	background: rgb(56, 56, 56);
-	position: relative;
-	display: inline-block;
-	vertical-align: middle; /*needed to get rid of extra space*/
-	text-align: center;
-	color: #fff;
-	border: 1px solid #999;
-	border-radius: 2px;
-	height: 2em;
-	width: 7em;
-	line-height: 2em;
-	margin-right: 1.2em;
-	overflow: hidden;
+#searchFormContainer {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-align: left;
 }
-#fileInputButton:hover{
-	background: rgb(64, 64, 64);
-	border: 1px solid #ddd;
+#fileInputButton{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background: rgb(56, 56, 56);
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #999;
+    border-radius: 2px;
+    height: 2em;
+    width: 7em;
+    line-height: 2em;
+    margin-right: 1.2em;
+    overflow: hidden;
+}
+
+#searchForm {
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 100%;
 }
 #fileInput {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
     position: absolute;
     height: inherit;
     width: inherit;
@@ -82,19 +101,69 @@ input, select, textarea, button {
     opacity: 0;
     z-index: 2;
 }
-
 #fileInputLabel {
-    vertical-align: top;
+    text-align: center;
+    color: #fff;
+    line-height: 2em;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-size: 0.9em;
+    vertical-align: top;
 }
 
 #fileRowContainer{
-	width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
-
-
+#urlInput {
+    box-sizing: border-box;
+    padding: 0;
+    font-size: inherit;
+    color: #ccc;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    height: 2.3em;
+    width: 100%;
+    padding-left: 0.4em;
+    margin: 0.6em 0 0.6em 0;
+}
+#searchRowContainer {
+    color: #fff;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+#searchButton {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    display: inline-block;
+    border-radius: 2px;
+    border: none;
+    text-align: center;
+    background-color: rgb(133, 133, 133);
+    font-weight: bold;
+    margin-left: 1em;
+    width: 7em;
+    height: 2em;
+    line-height: 2em;
+    color: #fff;
+    -webkit-appearance: none;
+    box-shadow: none;
+}
 #spacer {
     grid-column: 2/4;
 }
